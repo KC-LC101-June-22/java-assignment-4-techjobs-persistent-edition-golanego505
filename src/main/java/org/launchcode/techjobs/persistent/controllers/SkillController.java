@@ -22,6 +22,7 @@ public class SkillController {
     public String index(Model model) {
         model.addAttribute("title", "All Skills");
         model.addAttribute("skills", skillRepository.findAll());
+        //model.addAttribute("employers", employerRepository.findAll());
         return "skills/index";
     }
 

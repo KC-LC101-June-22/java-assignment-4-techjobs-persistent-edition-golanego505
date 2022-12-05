@@ -5,6 +5,7 @@ import java.util.Objects;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -15,9 +16,10 @@ public abstract class AbstractEntity {
     @Id
     @GeneratedValue
     private int id;
+    @NotBlank(message="Please give a name.")
     @Size(min = 1, max = 255)
-    @NotEmpty
-    @NotNull
+    //@NotEmpty
+    //@NotNull
     private String name;
 
     public int getId() {
